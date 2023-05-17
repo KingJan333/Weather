@@ -3,8 +3,8 @@ import {createRouter, createWebHistory} from 'vue-router'
 const routes = [
     {
         path: '/',
-        name: 'News',
-        component: () => import('../pages/page/index.vue'),
+        name: 'Home',
+        component: () => import('../pages/MainPage/main.vue'),
         meta: {
             layout: 'default',
             requiresAuth: false,
@@ -20,17 +20,6 @@ const router = createRouter({
 router.beforeEach((to, from, next) => {
     next()
     window.scrollTo(0, 0)
-//     if (to.matched.some(record => record.meta.requiresAuth)) {
-//         const userIsLogin = true;
-//         // eslint-disable-next-line
-//         if (!!userIsLogin) {
-//             next()
-//             return
-//         }
-//         next('/')
-//     } else {
-//         next()
-//     }
 })
 
 export default router
